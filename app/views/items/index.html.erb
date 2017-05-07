@@ -1,0 +1,9 @@
+<h1> Car store</h1>
+<% @items.each do |car|%>
+<h1> <%= car.name %> </h1> 
+<h1> <%= car.price %> </h1> 
+<a href = "/items/<%= car.id %>"> <img src= <%= car.image %> > </a>
+<h1> <%= car.description %> </h1> 
+<br>
+
+<% end %>
