@@ -3,4 +3,7 @@
 <img src =  <%= @item.image %> >
 <h1> <%= @item.description %></h1>
 
+<a href="/items/<%= @item.id %>/edit">Update Listing</a>
+<%= link_to "Delete", "/items/#{@item.id}", method: :delete %>
+
 
