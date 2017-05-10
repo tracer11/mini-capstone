@@ -9,9 +9,22 @@ img{
 h1{
   margin:auto;
   padding:auto;
-  background-color:blue;
-  color:black;
-  font-family:arial;
+  color:white;
   text-align:center; 
 }
 
+h4{
+  margin:auto;
+  padding:auto;
+  color:white;
+  text-align:center; 
+}
+
+body{
+  font-family: "Lucida Bright",Georgia,serif;
+  background-image:url('real_cf.png')
+}
+
+label{
+  color:white;
+}

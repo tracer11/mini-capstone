@@ -1,10 +1,14 @@
-<h1> Car store</h1>
-<br>
-<% @items.each do |car|%>
-<h1> <%= car.name %> </h1> 
-<h1> <%= car.price %> </h1> 
-<a href = "/items/<%= car.id %>"> <img src= <%= car.image %> > </a>
-<h1> <%= car.description %> </h1> 
-<br>
+<div class="row">
 
+  <h1> Car store</h1>
+  <br>
+  <% @items.each do |car|%>
+    <div class="col-sm-6">
+      <h1> <%= car.name %> </h1> 
+      <h1> <%= car.price %> </h1> 
+      <a href = "/items/<%= car.id %>"> <img src= <%= car.image %> > </a>
+      <h1> <%= car.description %> </h1> 
+      <br>
+    </div>
 <% end %>
+</div>
