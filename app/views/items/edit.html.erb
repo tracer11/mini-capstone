@@ -1,14 +1,17 @@
 <h1>Edit your listing</h1>
 
-<%= form_tag "/items/#{@item.id}", method: :patch do %>
-  <div>
-    Name: <input type="text" name="name" value="<%= @item.name %>">
+<%= form_tag "/items/#{@item.id}/", method: :patch do %>
+  <div class="form-group">
+    <label for="exampleInputName2">Name</label>
+    <input type="text" class="form-control" id="exampleInputName2" value="<%= @item.name %>" name="name">
   </div>
-  <div>
-    Price: <input type="integer" name="price" value="<%= @item.price %>">
+  <div class="form-group">
+    <label for="exampleInputPrice2">Price</label>
+    <input type="text" class="form-control" id="exampleInputPrice2" value="<%= @item.price %>" name="price">
   </div>
-  <div>
-    Description: <input type="text" name="description" value="<%= @item.description %>">
+  <div class="form-group">
+    <label for="exampleInputDescription2">Description</label>
+    <input type="text" class="form-control" id="exampleInputDescription" value="<%= @item.description %>" name="description">
   </div>
-  <input type="submit" value="Update Listing">
+  <input type="submit" class="btn btn-default" value="Edit Listing">
 <% end %>

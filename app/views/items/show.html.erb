@@ -1,10 +1,11 @@
 <h4>Updated at: <%= @item.friendly_updated_at %></h4>
 <h1> <%= @item.name %></h1>
-<h1> Price: $<%= @item.price %></h1>
+<h1> Price: $<%= @item.price %> Tax: $<%= @item.tax %></h1>
+<h1>Total: $<%= @item.total %></h1>
 <img src =  <%= @item.image %> >
 <h1> <%= @item.description %></h1>
 
-<a href="/items/<%= @item.id %>/edit">Update Listing</a>
-<%= link_to "Delete", "/items/#{@item.id}", method: :delete %>
+<h2><a href="/items/<%= @item.id %>/edit">Update Listing</a></h2>
+<h2><%= link_to "Delete", "/items/#{@item.id}", method: :delete %></h2>
 
 
