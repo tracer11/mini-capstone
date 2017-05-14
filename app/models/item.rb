@@ -20,7 +20,6 @@ class Item < ApplicationRecord
   end
 
   def discounted?
-     price < 1000
-      
+     price < 1000   
   end
 end

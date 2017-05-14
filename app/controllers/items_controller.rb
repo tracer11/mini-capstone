@@ -2,11 +2,32 @@
 
   def index
     @items = Item.all 
+    sort_controller = params[:sort]
+    sort_order = params[:sort_order]
+    discount = params[:discount]
+    search_term = params[:search_term]
+
+    if search_term
+      @items = Item.where(
+                          "name iLIKE ? OR description iLIKE ?",
+                           "%#{search_term}%",
+                           "%#{search_term}%"
+                           )
+    end
+
+    if discount
+      @items = @items.where("price < ?", discount)
+    end
+
+    if sort_controller && sort_order
+      @items = @items.order(sort_controller => sort_order)
+    elsif sort_controller 
+      @items = @items.order(sort_controller)
+    end
   end
 
   def show
-    item_id = params[:id]
-    @item = Item.find_by(id: item_id)
+    @item = Item.find(params[:id])
   end
 
   def new
@@ -46,4 +67,8 @@
     redirect_to "/"
   end
 
+  def random
+    item = Item.all.sample
+    redirect_to "/items/#{item.id}"
+  end
 end
