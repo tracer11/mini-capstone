@@ -37,7 +37,8 @@
     item = Item.new(
                     name: params[:name],
                     price: params[:price],
-                    description: params[:description]
+                    description: params[:description],
+                    supplier_id: params[:supplier_id]
                     )
     item.save
     flash[:success] = "Listing Created"
@@ -53,7 +54,8 @@
     item.assign_attributes(
                           name: params[:name],
                           price: params[:price],
-                          description: params[:description]
+                          description: params[:description],
+                          supplier_id: params[:supplier_id]
                           )
     item.save
     flash[:success] = "Listing Updated"

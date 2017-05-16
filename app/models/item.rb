@@ -1,4 +1,8 @@
 class Item < ApplicationRecord
+  
+    belongs_to :supplier
+
+
   def friendly_updated_at
     updated_at.strftime('%e %b %Y %H:%M:%S%p')
   end

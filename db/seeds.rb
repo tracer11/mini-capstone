@@ -10,8 +10,8 @@
 #item = Item.new(name: "Mitsubishi Evo", color: "silver", price: 1000, image: "http://ridesandstyling.com/database/images/2012/07/mitsubishi-evolution-ix-silver-white-42.jpg", description: "Rally Legend")
 #item.save
 
-item = Item.new(name: "Nissan Silvia", color: "White", price: 950, image: "http://ridesandstyling.com/database/images/2012/09/nissan-s15-silvia-white-bronze1.jpg", description: "Drift Missle")
-item.save
+supplier = Supplier.create(name: "Nissan", email: "nissan@gmail.com", phone_number: "773-555-5151")
 
-item = Item.new(name: "Nissan 370z", color: "Black", price: 850, image: "https://s-media-cache-ak0.pinimg.com/originals/96/d8/c6/96d8c671c6ffeadad37ae7cde9fafe62.jpg", description: "Great Daily Car")
-item.save
+supplier = Supplier.create(name: "Toyota", email: "toyota@gmail.com", phone_number: "773-555-5152")
+
+supplier = Supplier.create(name: "Subaru", email: "subaru@gmail.com", phone_number: "773-555-5153")

@@ -3,8 +3,8 @@
 <h1> Price: $<%= @item.price %> Tax: $<%= @item.tax %></h1>
 <h1>Total: $<%= @item.total %></h1>
 <img src =  <%= @item.image %> >
-<h1> <%= @item.description %></h1>
-
+<h1>Description: <%= @item.description %></h1>
+<h1>Supplier ID: <%= @item.supplier_id %> </h1>
 <h2><a href="/items/<%= @item.id %>/edit">Update Listing</a></h2>
 <h2><%= link_to "Delete", "/items/#{@item.id}", method: :delete %></h2>
 
