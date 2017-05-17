@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   
     belongs_to :supplier
+    has_many :images
 
 
   def friendly_updated_at
@@ -25,5 +26,14 @@ class Item < ApplicationRecord
 
   def discounted?
      price < 1000   
+  end
+
+  def first_image_url
+    image_collection = images
+    if image_collection.length == 0
+      "http://orig14.deviantart.net/71cf/f/2010/149/1/0/ricers_the_downfall_of_honda_by_jedijaffy14.jpg"
+    else
+     image_collection.first.url
+   end
   end
 end

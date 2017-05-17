@@ -4,10 +4,10 @@
   <h1> JDM Land</h1>
   <br>
   <% @items.each do |car|%>
-    <div class="col-sm-15">
-      <h1>Name: <%= car.name %> </h1> 
+    <div>
+      <a href="/items/<%= car.id %>/"><h1>Name: <%= car.name %></h1></a>
       <h1>Price: $<%= car.price %> <%= car.discount_item %></h1> 
-      <a href = "/items/<%= car.id %>"> <img src= <%= car.image %> > </a>
+      <h1><img src=<%= car.first_image_url %>> </h1>
       <h1>Description: <%= car.description %> </h1> 
       <h1>Stock: <%= car.stock %></h1>
       <br>

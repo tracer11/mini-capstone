@@ -38,7 +38,7 @@
                     name: params[:name],
                     price: params[:price],
                     description: params[:description],
-                    supplier_id: params[:supplier_id]
+                    supplier_id: params[:supplier] [:supplier_id]
                     )
     item.save
     flash[:success] = "Listing Created"
