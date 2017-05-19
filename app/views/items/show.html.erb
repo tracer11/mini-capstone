@@ -6,7 +6,18 @@
   <img src=<%= image.url %>>
 <% end %>
 <h1>Description: <%= @item.description %></h1>
+<h1>Item Id: <%= @item.id %></h1>
 <h1>Supplier Name: <%= @item.supplier.name %> </h1> -->
+
+<%= form_tag '/orders', method: :post do %>
+  <div>
+    Quantity<input type="integer" name="quantity">
+  </div>
+  <div>
+    Item ID<input type="text" name="item_id">
+  </div>
+  <input type="submit" value="Buy Now!">
+<% end %>
 <h2><a href="/items/<%= @item.id %>/edit">Update Listing</a></h2>
 <h2><%= link_to "Delete", "/items/#{@item.id}", method: :delete %></h2>
 
