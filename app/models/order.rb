@@ -13,5 +13,6 @@ class Order < ApplicationRecord
   def total_quantity
     @price + @tax
   end
+
 end
 

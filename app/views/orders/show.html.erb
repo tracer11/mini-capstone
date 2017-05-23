@@ -2,12 +2,12 @@
 <br>
 <h1>Ordered at: <%=@order.created_at  %></h1>
 <h1>Ordered By: <%=current_user.email  %></h1>
-<h1>Item Picture: <img src=<%= @item.images %> ></h1>
+<h1>Item Picture: <img src=<%= @item.first_image_url %> ></h1>
 <h1>Quantity Ordered: <%=@order.quantity  %></h1>
 <h1>Item name: <%= @item.name  %></h1>
-<h1>Price: <%= @order.price_quantity  %></h1>
-<h1>tax: <%= @order.tax_quantity %></h1>
+<h1>Price: $<%= @order.price_quantity  %></h1>
+<h1>tax: $<%= @order.tax_quantity %></h1>
 <h1> ---------------------</h1>
-<h1>Total: <%= @order.total_quantity  %></h1>
+<h1>Total: $<%= @order.total_quantity  %></h1>
 
 

@@ -8,15 +8,20 @@
 <h1>Description: <%= @item.description %></h1>
 <h1>Item Id: <%= @item.id %></h1>
 <h1>Supplier Name: <%= @item.supplier.name %> </h1> -->
+<h1>Categories:</h1>
+<% @item.categories.each do |category| %>
+  <p><%= category.name.titleize %></p>
+<% end %>
+
 
 <%= form_tag '/orders', method: :post do %>
-  <div>
-    Quantity<input type="integer" name="quantity">
+  <div id="buy_now">
+    <input type="integer" name="quantity" placeholder="Quantity">
+    <input class="btn btn-primary" type="submit" value="Buy Now!">
   </div>
   <div>
-    Item ID<input type="text" name="item_id">
+    <input type="hidden" name="item_id" value="<%= @item.id %>">
   </div>
-  <input type="submit" value="Buy Now!">
 <% end %>
 <h2><a href="/items/<%= @item.id %>/edit">Update Listing</a></h2>
 <h2><%= link_to "Delete", "/items/#{@item.id}", method: :delete %></h2>

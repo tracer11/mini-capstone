@@ -21,12 +21,28 @@
 
 
 # image = Image.create(url: "http://www.japanesesportcars.com/images/wallpapers/supra10242.jpg", item_id: 2 )
-image = Image.create(url: "http://www.moibbk.com/images/toyota-supra-white-3.jpg", item_id: 2 )
+#image = Image.create(url: "http://www.moibbk.com/images/toyota-supra-white-3.jpg", item_id: 2 )
 
 # image = Image.create(url: "http://ridesandstyling.com/database/images/2012/07/mitsubishi-evolution-ix-silver-white-31.jpg", item_id: 4 )
 # image = Image.create(url: "http://i.imgur.com/GlBovKl.jpg", item_id: 4 )
 
 # image = Image.create(url: "https://i.ebayimg.com/00/s/NDI2WDY0MA==/z/TOQAAOSw-0xYfnWb/$_86.JPG", item_id: 3 )
 # image = Image.create(url: "http://www.tnaauto.com/v/vspfiles/photos/FF-0405WRXSTI-5.jpg", item_id: 3 )
+
+
+#1 expensive
+#2 rwd
+#3 awd
+CategoryItem.create!([
+                    {category_id: 1, item_id: 1},
+                    {category_id: 1, item_id: 5},
+                    {category_id: 1, item_id: 2},
+                    {category_id: 2, item_id: 6},
+                    {category_id: 2, item_id: 2},
+                    {category_id: 2, item_id: 5},
+                    {category_id: 3, item_id: 1},
+                    {category_id: 3, item_id: 4},
+                    {category_id: 3, item_id: 3}
+                    ])
 
 

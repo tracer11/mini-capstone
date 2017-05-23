@@ -6,7 +6,11 @@
     sort_order = params[:sort_order]
     discount = params[:discount]
     search_term = params[:search_term]
+    category = params[:category]
 
+    if category
+      @items = Category.find_by(name: category).items
+    end
     if search_term
       @items = Item.where(
                           "name iLIKE ? OR description iLIKE ?",
