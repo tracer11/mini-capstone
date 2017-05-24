@@ -3,6 +3,8 @@ class Item < ApplicationRecord
     has_many :images
     has_many :category_items
     has_many :categories, through: :category_items
+    has_many :carted_products
+    has_many :orders, through: :carted_products
 
   def friendly_updated_at
     updated_at.strftime('%e %b %Y %H:%M:%S%p')
