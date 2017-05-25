@@ -5,7 +5,11 @@ class Order < ApplicationRecord
   has_many :items, through: :carted_products 
 
   def price_quantity
-   @price = item.price * quantity
+    @carted_products = current_user.cart
+    price = 0
+    @carted_products.each do |cart|
+      price =+ cart.item.price
+    end 
   end
 
   def tax_quantity

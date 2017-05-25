@@ -4,6 +4,7 @@
   <h1><%= carted_product.item.name %></h1>
   <h1><%= carted_product.item.price %></h1>
   <h1><%= carted_product.quantity %></h1>
+  <%= link_to "remove", "/carted_products/#{carted_product.id}", method: :delete %>
 <% end %>
 
-<%= link_to "Buy Now" , '/orders', method: :post %> 
+<%= link_to "Buy Now" , "/carted_products", method: :post, class: "btn btn-primary" %> 
