@@ -1,5 +1,7 @@
  class ItemsController < ApplicationController
 
+  before_action :authenticate_admin!, except: [:index, :show, :random]
+
   def index
     @items = Item.all 
     sort_controller = params[:sort]
@@ -35,18 +37,22 @@
   end
 
   def new
+    @item = Item.new
   end
 
   def create
-    item = Item.new(
+    @item = Item.new(
                     name: params[:name],
                     price: params[:price],
                     description: params[:description],
                     supplier_id: params[:supplier] [:supplier_id]
                     )
-    item.save
-    flash[:success] = "Listing Created"
-    redirect_to "/items/#{item.id}"
+    if @item.save
+      flash[:success] = "Listing Created"
+      redirect_to "/items/#{@item.id}"
+    else
+      render 'new.html.erb'
+    end
   end
 
   def edit

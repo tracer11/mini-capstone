@@ -6,6 +6,14 @@ class Item < ApplicationRecord
     has_many :carted_products
     has_many :orders, through: :carted_products
 
+    validates :name, presence: true
+    validates :name, uniqueness: true
+    validates :price, presence: true
+    validates :price, numericality: true
+    validates :description, presence: true
+    validates :description, length: {maximum: 500}
+    #validates :price, format: {with: (/\d+[.]+([0-9])\d/}
+
   def friendly_updated_at
     updated_at.strftime('%e %b %Y %H:%M:%S%p')
   end

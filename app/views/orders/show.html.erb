@@ -2,8 +2,7 @@
 <br>
 <h1>Ordered at: <%=@order.created_at  %></h1>
 <h1>Ordered By: <%=current_user.email  %></h1>
-<h1>Item Picture: <img src=<%= @item.first_image_url %> ></h1>
-<% @carted_products.each do |carted_product| %>
+<% @order.carted_products.each do |carted_product| %>
   <h1><%= carted_product.item.name %></h1>
   <h1><%= carted_product.item.price %></h1>
   <h1><%= carted_product.quantity %></h1>

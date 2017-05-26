@@ -30,14 +30,16 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
+          <% unless admin_signed_in? %>
             <li><a href="/items/new">New Listing</a></li>
+          <% end %>
              <li role="separator" class="divider"></li>
             <li><a href="/items?sort=price">Sort by Price(Low to High) </a></li>
             <li><a href="/items?sort=price&sort_order=desc">Sort by Price(High to Low)</a></li>
             <li><a href="/items?discount=1000">Show Discount Items Only</a></li>
             <li><a href="/random">Random Item</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="/carted_products"><span class=glyphicon glyphicon-shopping-cart>Shopping Cart</a></li>
+            <li><a href="/carted_products"><span class="glyphicon glyphicon-shopping-cart">Shopping Cart</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">One more separated link</a></li>
           </ul>

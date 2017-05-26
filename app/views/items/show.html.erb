@@ -14,17 +14,21 @@
 <% end %>
 
 
-<%= form_tag '/carted_products', method: :post do %>
-  <div id="buy_now">
-    <input type="integer" name="quantity" placeholder="Quantity">
-    <input class="btn btn-primary" type="submit" value="Add To Cart">
-  </div>
-  <div>
-    <input type="hidden" name="item_id" value="<%= @item.id %>">
-  </div>
+<% if current_user %>
+  <%= form_tag '/carted_products', method: :post do %>
+    <div id="buy_now">
+      <input type="integer" name="quantity" placeholder="Quantity">
+      <input class="btn btn-primary" type="submit" value="Add To Cart">
+    </div>
+   <div>
+      <input type="hidden" name="item_id" value="<%= @item.id %>">
+    </div>
+  <% end %>
 <% end %>
+<% if admin_signed_in? %>
 <h2><a href="/items/<%= @item.id %>/edit">Update Listing</a></h2>
 <h2><%= link_to "Delete", "/items/#{@item.id}", method: :delete %></h2>
+<% end %>
 
 
 

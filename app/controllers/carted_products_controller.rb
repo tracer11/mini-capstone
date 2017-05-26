@@ -1,11 +1,13 @@
 class CartedProductsController < ApplicationController
+  before_action :authenticate_user!
+
   def create
-    cart = CartedProduct.new(
+    carted_product = CartedProduct.new(
                       user_id: current_user.id,
                       item_id: params[:item_id],
                       quantity: params[:quantity],
                       status: "carted")
-    cart.save
+    carted_product.save
     redirect_to'/carted_products'
 
   end

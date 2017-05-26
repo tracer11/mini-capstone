@@ -4,20 +4,16 @@ class Order < ApplicationRecord
   has_many :carted_products
   has_many :items, through: :carted_products 
 
-  def price_quantity
-    @carted_products = current_user.cart
-    price = 0
-    @carted_products.each do |cart|
-      price =+ cart.item.price
-    end 
-  end
+  def calculate_totals
+    subtotal_sum = 0
+    carted_products.each do |carted_product|
+        subtotal_sum += carted_product.subtotal
+    end
 
-  def tax_quantity
-    @tax = @price * 0.09
-  end
-
-  def total_quantity
-    @price + @tax
+    self.subtotal = subtotal_sum
+    self.tax = subtotal * 0.09
+    self.total = subtotal + tax
+    save
   end
 
 end
