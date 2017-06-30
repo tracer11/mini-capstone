@@ -33,16 +33,16 @@
 #1 expensive
 #2 rwd
 #3 awd
-CategoryItem.create!([
-                    {category_id: 1, item_id: 1},
-                    {category_id: 1, item_id: 5},
-                    {category_id: 1, item_id: 2},
-                    {category_id: 2, item_id: 6},
-                    {category_id: 2, item_id: 2},
-                    {category_id: 2, item_id: 5},
-                    {category_id: 3, item_id: 1},
-                    {category_id: 3, item_id: 4},
-                    {category_id: 3, item_id: 3}
-                    ])
+# CategoryItem.create!([
+#                     {category_id: 1, item_id: 1},
+#                     {category_id: 1, item_id: 5},
+#                     {category_id: 1, item_id: 2},
+#                     {category_id: 2, item_id: 6},
+#                     {category_id: 2, item_id: 2},
+#                     {category_id: 2, item_id: 5},
+#                     {category_id: 3, item_id: 1},
+#                     {category_id: 3, item_id: 4},
+#                     {category_id: 3, item_id: 3}
+#                     ])
 
 
