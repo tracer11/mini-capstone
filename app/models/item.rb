@@ -1,10 +1,10 @@
 class Item < ApplicationRecord
-    belongs_to :supplier
-    has_many :images
-    has_many :category_items
-    has_many :categories, through: :category_items
-    has_many :carted_products
-    has_many :orders, through: :carted_products
+    # belongs_to :supplier
+    # has_many :images
+    # has_many :category_items
+    # has_many :categories, through: :category_items
+    # has_many :carted_products
+    # has_many :orders, through: :carted_products
 
     validates :name, presence: true
     validates :name, uniqueness: true

@@ -1,7 +1,7 @@
 class CartedProduct < ApplicationRecord
-  belongs_to :item
-  belongs_to :order, optional: true
-  belongs_to :user
+  # belongs_to :item
+  # belongs_to :order, optional: true
+  # belongs_to :user
 
   validates :quantity, presence: true
   validates :quantity, numericality: true
